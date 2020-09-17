@@ -77,6 +77,37 @@ namespace DogGo.Controllers
         }
 
 
+        // GET: Owners/Edit/5
+        public ActionResult Edit(int id)
+        {
+            Owner owner = _ownerRepo.GetOwnerById(id);
+
+            if (owner == null)
+            {
+                return NotFound();
+            }
+
+            return View(owner);
+        }
+
+        // POST: Owners/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, Owner owner)
+        {
+            try
+            {
+                _ownerRepo.UpdateOwner(owner);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(owner);
+            }
+        }
+
+
 
         public ActionResult Index()
         {
