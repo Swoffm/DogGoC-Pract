@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace DogGo.Repositories
 {
-    interface IDog
+    interface IDogRepository
     {
-        List<Dog> GetAllDogs();
-        List<Dog> GetDogsByOwnerId(int ownerId);
+       //public List<Dog> GetAllDogs();
+        public List<Dog> GetDogsByOwnerId(int ownerId);
 
-        void AddDog(Dog newDog);
+
+        //public void AddDog(Dog newDog);
 
     }
 }
