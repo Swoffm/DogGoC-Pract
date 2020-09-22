@@ -8,7 +8,7 @@ namespace DogGo.Repositories
 {
     public interface IDogRepository
     {
-       //public List<Dog> GetAllDogs();
+       public List<Dog> GetAllDogs();
         public List<Dog> GetDogsByOwnerId(int ownerId);
 
 
