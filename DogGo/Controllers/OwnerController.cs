@@ -11,10 +11,18 @@ namespace DogGo.Controllers
     public class OwnerController : Controller
     {
         private readonly IOwnerRepository _ownerRepo;
+        private readonly IDogRepository _dogRepo;
+        private readonly IWalkerRepository _walkerRepo;
 
-        public OwnerController(IOwnerRepository ownerRepo)
+
+        public OwnerController(
+            IOwnerRepository ownerRepository,
+            IDogRepository dogRepository,
+            IWalkerRepository walkerRepository)
         {
-            _ownerRepo = ownerRepo;
+            _ownerRepo = ownerRepository;
+            _dogRepo = dogRepository;
+            _walkerRepo = walkerRepository;
         }
 
         public ActionResult Details(int id)
