@@ -12,7 +12,7 @@ namespace DogGo.Repositories
         public List<Dog> GetDogsByOwnerId(int ownerId);
 
 
-        //public void AddDog(Dog newDog);
+        public void AddDog(Dog newDog);
 
     }
 }
